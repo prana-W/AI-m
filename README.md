@@ -1,2 +1,3 @@
 # AI-m
-AI-m (AIM integrates models)
+
+AIM integrates models
