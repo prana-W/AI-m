@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI } from '@google/genai';
 
 const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_KEY });
 
@@ -16,10 +16,10 @@ const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_KEY });
 // }
 
 export default async function gemini_2_5_flash() {
-    console.log('check')
+    console.log('check');
     const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
-        contents: "How does AI work?",
+        model: 'gemini-2.5-flash',
+        contents: 'How does AI work?',
     });
     console.log(response.text);
 }
