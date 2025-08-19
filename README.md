@@ -4,6 +4,9 @@
 
 This tool is designed for developers, researchers, and AI enthusiasts who want to leverage the unique strengths of various models without juggling multiple interfaces.
 
+![About Page](/src/assets/images/one.png)
+
+
 ---
 
 ## ✨ Key Features
@@ -23,6 +26,10 @@ Getting started with AI-m is incredibly simple.
 2.  **Select Your Models**: Choose any three models from our extensive collection to compare for any given prompt.
 3.  **Compare Results**: Enter your prompt and receive responses from all selected models side-by-side, allowing for immediate comparison and analysis.
 
+![API Keys](./src/assets/images/four.png)
+![Response](./src/assets/images/five.png)
+![Response](./src/assets/images/six.png)
+
 ---
 
 ## 🤖 Supported Models
@@ -31,16 +38,18 @@ AI-m provides access to a diverse and growing list of the industry's best models
 
 <div align="center">
 
-| Model Provider  | Model Name                   |
-| :-------------- | :--------------------------- |
-| **Google**      | Gemini Pro, Gemini Flash     |
-| **OpenAI**      | GPT-4o, GPT-3.5 Turbo        |
-| **Anthropic**   | Claude 3 Opus, Sonnet, Haiku |
-| **Meta**        | Llama 3 (70B & 8B)           |
-| **DeepSeek**    | DeepSeek Coder               |
-| **And more...** |                              |
+| Model Provider  | Model Name         |
+| :-------------- |:-------------------|
+| **Google**      | Gemini 2.0 Flash   |
+| **OpenAI**      | GPT OSS            |
+| **Meta**        | Llama 3.3          |
+| **DeepSeek**    | DeepSeek V3 and R1 |
+| **And more...** |                    |
 
 </div>
+
+![Available Models](./src/assets/images/two.png)
+
 
 ---
 
