@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import {
-    Sun,
-    Moon,
-    Menu,
-    Bot,
-    Sparkles,
-    Key,
-    Home,
-    Info,
-} from 'lucide-react';
+import { Sun, Moon, Menu, Bot, Sparkles, Key, Home, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {

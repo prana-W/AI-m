@@ -8,10 +8,10 @@ This tool is designed for developers, researchers, and AI enthusiasts who want t
 
 ## ✨ Key Features
 
-* 🧠 **Multi-Model Intelligence**: Compare responses from 12+ top-tier AI models, including Gemini, GPT, DeepSeek, and more, all from a single, intuitive interface.
-* 🛡️ **Privacy First**: Your API keys are your own. They are stored securely in your browser's local storage and are never sent to our servers. We believe in 100% client-side security.
-* ⚡ **Lightning Fast**: Get instant, simultaneous responses from multiple models. No waiting, no queues—just pure AI power at your fingertips.
-* 🌐 **Seamless OpenRouter Integration**: Simply add your OpenRouter API key to unlock access to the world's most advanced AI models in one place.
+- 🧠 **Multi-Model Intelligence**: Compare responses from 12+ top-tier AI models, including Gemini, GPT, DeepSeek, and more, all from a single, intuitive interface.
+- 🛡️ **Privacy First**: Your API keys are your own. They are stored securely in your browser's local storage and are never sent to our servers. We believe in 100% client-side security.
+- ⚡ **Lightning Fast**: Get instant, simultaneous responses from multiple models. No waiting, no queues—just pure AI power at your fingertips.
+- 🌐 **Seamless OpenRouter Integration**: Simply add your OpenRouter API key to unlock access to the world's most advanced AI models in one place.
 
 ---
 
@@ -31,14 +31,14 @@ AI-m provides access to a diverse and growing list of the industry's best models
 
 <div align="center">
 
-| Model Provider | Model Name              |
-| :------------- | :---------------------- |
-| **Google** | Gemini Pro, Gemini Flash|
-| **OpenAI** | GPT-4o, GPT-3.5 Turbo   |
-| **Anthropic** | Claude 3 Opus, Sonnet, Haiku |
-| **Meta** | Llama 3 (70B & 8B)      |
-| **DeepSeek** | DeepSeek Coder          |
-| **And more...**|                         |
+| Model Provider  | Model Name                   |
+| :-------------- | :--------------------------- |
+| **Google**      | Gemini Pro, Gemini Flash     |
+| **OpenAI**      | GPT-4o, GPT-3.5 Turbo        |
+| **Anthropic**   | Claude 3 Opus, Sonnet, Haiku |
+| **Meta**        | Llama 3 (70B & 8B)           |
+| **DeepSeek**    | DeepSeek Coder               |
+| **And more...** |                              |
 
 </div>
 
@@ -46,10 +46,10 @@ AI-m provides access to a diverse and growing list of the industry's best models
 
 ## 🛠️ Tech Stack
 
-* **Frontend**: React
-* **Styling**: ShadCN and Tailwind
-* **Icons**: Lucide React
-* **Routing**: React Router
+- **Frontend**: React
+- **Styling**: ShadCN and Tailwind
+- **Icons**: Lucide React
+- **Routing**: React Router
 
 ---
 

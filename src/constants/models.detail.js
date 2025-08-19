@@ -1,5 +1,10 @@
 const aiModelDetails = [
     {
+        name: 'None',
+        model: null,
+        description: 'This is done to avoid multiple models by default.',
+    },
+    {
         name: 'GPT OSS',
         model: 'openai/gpt-oss-20b:free',
         description:

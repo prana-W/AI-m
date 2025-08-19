@@ -8,14 +8,12 @@ import 'highlight.js/styles/github-dark.css';
 
 const MarkdownRenderer = ({ children }) => {
     return (
-
-            <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeRaw, rehypeHighlight]}
-            >
-                {children}
-            </ReactMarkdown>
-
+        <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw, rehypeHighlight]}
+        >
+            {children}
+        </ReactMarkdown>
     );
 };
 

@@ -9,11 +9,10 @@ import {
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Copy, Check } from 'lucide-react';
-import aiModelApi from '../aiModelApi/aiModelApi.js';
+import { Skeleton } from '@/components/ui/skeleton';
 import aiModelDetails from '@/constants/models.detail.js';
-import MarkdownRenderer from "@/components/MarkdownRenderer.jsx";
-import openAiSdk from "@/aiModelApi/openAiSdkApi.js";
-import { Skeleton } from "@/components/ui/skeleton";
+import MarkdownRenderer from '@/components/MarkdownRenderer.jsx';
+import aiModelApi from '../aiModelApi/aiModelApi.js';
 
 const ResponseBox = ({ prompt, index = 0 }) => {
     const [response, setResponse] = useState('');
@@ -52,21 +51,19 @@ const ResponseBox = ({ prompt, index = 0 }) => {
 
     useEffect(() => {
         if (prompt && selectedModel !== 'None') {
-            setResponse('')
-            openAiSdk({
+            setResponse('');
+            aiModelApi({
                 onChunk: handleChunk,
                 prompt,
                 modelName: selectedModel,
-                onLoading: handleLoading
+                onLoading: handleLoading,
             });
         }
     }, [prompt]);
 
     const handleLoading = (loadingState) => {
-
-            setLoading(loadingState );
-
-    }
+        setLoading(loadingState);
+    };
 
     return (
         <Card className="h-full flex flex-col">
@@ -119,7 +116,9 @@ const ResponseBox = ({ prompt, index = 0 }) => {
                         </div>
                     ) : (
                         <div className="text-sm whitespace-pre-wrap">
-                            <MarkdownRenderer>{response || ``}</MarkdownRenderer>
+                            <MarkdownRenderer>
+                                {response || ``}
+                            </MarkdownRenderer>
                         </div>
                     )}
                 </div>

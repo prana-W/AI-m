@@ -2,39 +2,35 @@ import { Home, ApiKeys, About, NotFound, Models } from './pages';
 import ErrorBoundary from './components/ErrorBoundary';
 import Layout from './Layout.jsx';
 
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      {
-        path: "api-keys",
-        element: <ApiKeys />,
-      },
-      {
-        path: "models",
-        element: <Models />,
-      },
-        {
-            path: "about",
-            element: <About />,
-        },
-        {
-            path: "*",
-            element: <NotFound />,
-        },
-    ],
-  },
+    {
+        path: '/',
+        element: <Layout />,
+        children: [
+            {
+                path: '',
+                element: <Home />,
+            },
+            {
+                path: 'api-keys',
+                element: <ApiKeys />,
+            },
+            {
+                path: 'models',
+                element: <Models />,
+            },
+            {
+                path: 'about',
+                element: <About />,
+            },
+            {
+                path: '*',
+                element: <NotFound />,
+            },
+        ],
+    },
 ]);
 
 function App() {
