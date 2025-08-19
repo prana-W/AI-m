@@ -7,9 +7,11 @@ function App() {
     return (
         <ErrorBoundary>
             <Router>
-                <div className="h-screen flex flex-col">
+                {/* Full-height flex container */}
+                <div className="min-h-screen flex flex-col">
                     <Header />
-                    <div className="flex-1">
+                    {/* Main grows and lets pages like Home stretch */}
+                    <main className="flex-1 flex flex-col">
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/api-keys" element={<ApiKeys />} />
@@ -18,7 +20,9 @@ function App() {
                             <Route path="/models" element={<Models />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>
-                    </div>
+                    </main>
+
+
                 </div>
                 <Footer />
             </Router>

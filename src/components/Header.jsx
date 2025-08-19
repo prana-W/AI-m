@@ -54,7 +54,7 @@ const Header = () => {
     const navItems = [
         { to: '/', label: 'Home', icon: Home },
         { to: '/api-keys', label: 'API Key', icon: Key },
-        { to: '/models', label: 'Model', icon: Bot },
+        { to: '/models', label: 'AI Models', icon: Bot },
         { to: '/about', label: 'About', icon: Info },
         { to: '/contact', label: 'Contact', icon: Contact },
     ];
