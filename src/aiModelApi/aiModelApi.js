@@ -1,8 +1,10 @@
 import detectAIModelName from '@/utils/aiModelDetector.js';
 import handleError from '@/utils/errorHandler.js';
+import fetchRateLimit from "@/aiModelApi/rateLimit.js";
 
 async function aiModelApi({ prompt, modelName, onChunk, onError }) {
     const apiKey = localStorage.getItem('openrouter_api_key');
+    const controller = new AbortController();
 
     try {
         const model = detectAIModelName(modelName);
@@ -31,6 +33,7 @@ async function aiModelApi({ prompt, modelName, onChunk, onError }) {
                     ],
                     stream: true,
                 }),
+                signal: controller.signal
             },
         );
 
@@ -39,7 +42,7 @@ async function aiModelApi({ prompt, modelName, onChunk, onError }) {
                 'AI Model API',
                 `Error: ${response.status} ${response?.statusText}`,
             );
-            onError('');
+            // onError('');
             return;
         }
 
@@ -91,6 +94,11 @@ async function aiModelApi({ prompt, modelName, onChunk, onError }) {
             }
         } finally {
             reader.cancel();
+
+            const something = await fetchRateLimit()
+            console.log(something)
+            // const savedCount = localStorage.getItem('daily_request_count');
+            // localStorage.setItem('daily_request_count', savedCount+1)
             console.log('Stream reading completed!');
         }
     } catch (err) {

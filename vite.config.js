@@ -11,4 +11,13 @@ export default defineConfig({
             '@': path.resolve(__dirname, './src'),
         },
     },
+    server: {
+        proxy: {
+            "/api/gemini": {
+                target: "https://generativelanguage.googleapis.com", // Gemini endpoint
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api\/gemini/, ""), // strips the /api/gemini prefix
+            },
+        },
+    },
 });

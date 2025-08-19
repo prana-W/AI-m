@@ -33,11 +33,11 @@ export default function ApiKeys() {
     }, []);
 
     const handleSaveKey = () => {
-        if (openRouterApiKey.trim()) {
-            localStorage.setItem('openrouter_api_key', openRouterApiKey.trim());
+
+            localStorage.setItem('openrouter_api_key', openRouterApiKey.trim() || '');
             setIsSaved(true);
             setTimeout(() => setIsSaved(false), 2000);
-        }
+
     };
 
     const handleKeyChange = (e) => {
@@ -100,7 +100,7 @@ export default function ApiKeys() {
                                 <Button
                                     onClick={handleSaveKey}
                                     disabled={
-                                        !openRouterApiKey.trim() || isSaved
+                                        isSaved
                                     }
                                     className="flex items-center space-x-1"
                                 >
