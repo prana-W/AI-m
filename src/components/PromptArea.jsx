@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { Send } from "lucide-react";
+import React, { useState } from 'react';
+import { Send } from 'lucide-react';
 
 const PromptInput = ({ onSend }) => {
-    const [prompt, setPrompt] = useState("");
+    const [prompt, setPrompt] = useState('');
 
     const handleSend = () => {
-        if (prompt.trim() === "") return;
-        onSend(prompt); // send prompt back to parent
-        setPrompt("");
+        if (prompt.trim() === '') return;
+        onSend(prompt);
+        setPrompt('');
     };
 
     return (
@@ -17,7 +17,7 @@ const PromptInput = ({ onSend }) => {
                 placeholder="Type your prompt..."
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSend()}
+                onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                 className="flex-1 px-4 py-2 text-sm bg-transparent outline-none dark:text-white"
             />
             <button
