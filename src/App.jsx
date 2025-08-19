@@ -1,24 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
 import { Home, ApiKeys, About, NotFound } from './pages';
 import { Header, Footer } from './components';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
     return (
-        <>
+        <ErrorBoundary>
             <Router>
-                <Header />
-                <main className="p-4 min-h-[80vh]">
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/apikeys" element={<ApiKeys />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="*" element={<NotFound />} />
-                    </Routes>
-                </main>
+                <div className="h-screen flex flex-col">
+                    <Header />
+                    <div className="flex-1">
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/api-keys" element={<ApiKeys />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="*" element={<NotFound />} />
+                        </Routes>
+                    </div>
+                </div>
                 <Footer />
             </Router>
-        </>
+        </ErrorBoundary>
     );
 }
 

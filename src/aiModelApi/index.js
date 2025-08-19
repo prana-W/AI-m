@@ -1,7 +1,7 @@
 import detectAIModelName from '@/utils/aiModelDetector.js';
 import handleError from '@/utils/errorHandler.js';
 
-async function aiModelApi({ prompt, modelName }) {
+async function aiModelApi({ prompt, modelName, onChunk }) {
     try {
         const model = detectAIModelName(modelName);
 
@@ -77,6 +77,9 @@ async function aiModelApi({ prompt, modelName }) {
 
                             if (content) {
                                 console.log(content);
+
+                                onChunk(content);
+                                // return content;
                             }
                         } catch (err) {
                             handleError('AI Model API', err);
