@@ -6,6 +6,11 @@ const aiModelDetails = [
             'DeepSeek V3, a 685B-parameter, mixture-of-experts model, is the latest iteration of the flagship chat model family from the DeepSeek team. It succeeds the DeepSeek V3 model and performs really well on a variety of tasks.',
     },
     {
+        name: 'None',
+        model: null,
+        description: "Use this, when you don't want to use any AI model.",
+    },
+    {
         name: 'Deepseek R1',
         model: 'deepseek/deepseek-r1-0528:free',
         description:

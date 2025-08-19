@@ -14,14 +14,23 @@ import aiModelDetails from '@/constants/models.detail.js';
 
 const ResponseBox = ({ prompt, index = 0 }) => {
     const [response, setResponse] = useState('');
-    const [selectedModel, setSelectedModel] = useState('test');
+    const [selectedModel, setSelectedModel] = useState(
+        aiModelDetails[index]?.name,
+    );
     const [isCopied, setIsCopied] = useState(false);
 
     const handleChunk = (chunk) => {
+        if (
+            response === 'Waiting for response...' &&
+            selectedModel !== 'None'
+        ) {
+            setResponse(chunk);
+        }
         setResponse((prev) => prev + chunk);
     };
 
     const handleModelChange = (value) => {
+        setResponse('');
         setSelectedModel(value);
     };
 
@@ -38,7 +47,7 @@ const ResponseBox = ({ prompt, index = 0 }) => {
     };
 
     useEffect(() => {
-        if (prompt) {
+        if (prompt && selectedModel !== 'None') {
             setResponse('Waiting for response...');
             aiModelApi({
                 onChunk: handleChunk,
@@ -46,7 +55,7 @@ const ResponseBox = ({ prompt, index = 0 }) => {
                 modelName: selectedModel,
             });
         }
-    }, [prompt, selectedModel]);
+    }, [prompt]);
 
     return (
         <Card className="h-full flex flex-col">
