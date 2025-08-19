@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react'; // redirect icon
+import { ArrowUpRight } from 'lucide-react';
 
 function Input({ label, name, value, onChange, placeholder, linkTo }) {
     return (

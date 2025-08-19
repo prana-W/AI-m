@@ -37,7 +37,6 @@ const ModelCard = ({ name, model, description }) => {
                     )}
                 </CardHeader>
 
-                {/* Content becomes scrollable if too long */}
                 <CardContent className="flex-1 overflow-y-auto">
                     <p className="text-sm text-muted-foreground leading-relaxed">
                         {description}

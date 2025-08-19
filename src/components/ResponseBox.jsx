@@ -61,6 +61,8 @@ const ResponseBox = ({ prompt, index = 0 }) => {
         }
     }, [prompt]);
 
+    // idk why the useEffect above is showing error. hehe
+
     const handleLoading = (loadingState) => {
         setLoading(loadingState);
     };

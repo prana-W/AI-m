@@ -200,7 +200,7 @@ const Footer = () => {
                     </div>
 
                     <Badge variant="secondary" className="text-xs">
-                        AI-m • All rights reserved.
+                        ai-m Higher.
                     </Badge>
                 </div>
             </div>

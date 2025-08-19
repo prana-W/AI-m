@@ -1,4 +1,3 @@
-// components/ErrorBoundary.jsx
 import React from 'react';
 import handleError from '@/utils/errorHandler';
 

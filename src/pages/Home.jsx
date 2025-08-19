@@ -8,6 +8,7 @@ export default function Home() {
         setPrompt(newPrompt);
     };
 
+    // 0 index in ResponseBox renders no model
     return (
         <div className="flex flex-col flex-1">
             <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 p-2 md:p-4">
