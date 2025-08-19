@@ -1,7 +1,9 @@
 import detectAIModelName from '@/utils/aiModelDetector.js';
 import handleError from '@/utils/errorHandler.js';
 
-async function aiModelApi({ prompt, modelName, onChunk }) {
+async function aiModelApi({ prompt, modelName, onChunk, onError }) {
+    const apiKey = localStorage.getItem('openrouter_api_key');
+
     try {
         const model = detectAIModelName(modelName);
 
@@ -14,7 +16,7 @@ async function aiModelApi({ prompt, modelName, onChunk }) {
             {
                 method: 'POST',
                 headers: {
-                    Authorization: `Bearer ${import.meta.env.VITE_OPEN_ROUTER_KEY}`,
+                    Authorization: `Bearer ${apiKey}`,
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
@@ -37,6 +39,7 @@ async function aiModelApi({ prompt, modelName, onChunk }) {
                 'AI Model API',
                 `Error: ${response.status} ${response?.statusText}`,
             );
+            onError('');
             return;
         }
 
@@ -77,9 +80,7 @@ async function aiModelApi({ prompt, modelName, onChunk }) {
 
                             if (content) {
                                 console.log(content);
-
                                 onChunk(content);
-                                // return content;
                             }
                         } catch (err) {
                             handleError('AI Model API', err);
@@ -90,6 +91,7 @@ async function aiModelApi({ prompt, modelName, onChunk }) {
             }
         } finally {
             reader.cancel();
+            console.log('Stream reading completed!');
         }
     } catch (err) {
         handleError('AI Model API', err);
