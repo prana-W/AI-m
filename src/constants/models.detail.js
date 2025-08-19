@@ -6,11 +6,6 @@ const aiModelDetails = [
             'gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for lower-latency inference and deployability on consumer or single-GPU hardware. The model is trained in OpenAI’s Harmony response format and supports reasoning level configuration, fine-tuning, and agentic capabilities including function calling, tool use, and structured outputs.',
     },
     {
-        name: 'None',
-        model: null,
-        description: "Use this, when you don't want to use any AI model.",
-    },
-    {
         name: 'Gemini 2.0 Flash',
         model: 'google/gemini-2.0-flash-exp:free',
         description:

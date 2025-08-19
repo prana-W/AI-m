@@ -9,8 +9,11 @@ import {
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Copy, Check } from 'lucide-react';
-import aiModelApi from '../aiModelApi';
+import aiModelApi from '../aiModelApi/aiModelApi.js';
 import aiModelDetails from '@/constants/models.detail.js';
+import MarkdownRenderer from "@/components/MarkdownRenderer.jsx";
+import openAiSdk from "@/aiModelApi/openAiSdkApi.js";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const ResponseBox = ({ prompt, index = 0 }) => {
     const [response, setResponse] = useState('');
@@ -18,6 +21,7 @@ const ResponseBox = ({ prompt, index = 0 }) => {
         aiModelDetails[index]?.name,
     );
     const [isCopied, setIsCopied] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleChunk = (chunk) => {
         if (
@@ -48,14 +52,21 @@ const ResponseBox = ({ prompt, index = 0 }) => {
 
     useEffect(() => {
         if (prompt && selectedModel !== 'None') {
-            setResponse('Waiting for response...');
-            aiModelApi({
+            setResponse('')
+            openAiSdk({
                 onChunk: handleChunk,
                 prompt,
                 modelName: selectedModel,
+                onLoading: handleLoading
             });
         }
     }, [prompt]);
+
+    const handleLoading = (loadingState) => {
+
+            setLoading(loadingState );
+
+    }
 
     return (
         <Card className="h-full flex flex-col">
@@ -100,9 +111,17 @@ const ResponseBox = ({ prompt, index = 0 }) => {
 
             <CardContent className="flex-1 overflow-hidden p-0">
                 <div className="h-full overflow-y-auto px-4 py-3">
-                    <div className="text-sm whitespace-pre-wrap">
-                        {response || ''}
-                    </div>
+                    {loading ? (
+                        <div className="space-y-2">
+                            <Skeleton className="h-4 w-3/4" />
+                            <Skeleton className="h-4 w-5/6" />
+                            <Skeleton className="h-4 w-2/3" />
+                        </div>
+                    ) : (
+                        <div className="text-sm whitespace-pre-wrap">
+                            <MarkdownRenderer>{response || ``}</MarkdownRenderer>
+                        </div>
+                    )}
                 </div>
             </CardContent>
         </Card>
