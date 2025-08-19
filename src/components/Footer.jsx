@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Github, Linkedin, Twitter, Heart, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -43,7 +43,6 @@ const Footer = () => {
     ];
 
     const quickLinks = [
-        { href: '/', label: 'Chat' },
         { href: '/models', label: 'Models' },
         { href: '/api-keys', label: 'API Key' },
     ];
@@ -55,7 +54,6 @@ const Footer = () => {
             external: true,
         },
         { href: '/about', label: 'About Us' },
-        { href: '/contact', label: 'Contact Us' },
     ];
 
     return (
@@ -124,9 +122,6 @@ const Footer = () => {
                                             className="inline-flex items-center gap-1"
                                         >
                                             {link.label}
-                                            {link.external && (
-                                                <ExternalLink className="w-3 h-3" />
-                                            )}
                                         </a>
                                     </Button>
                                 </div>

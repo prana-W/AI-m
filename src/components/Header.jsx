@@ -9,7 +9,6 @@ import {
     Key,
     Home,
     Info,
-    Contact,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -56,7 +55,6 @@ const Header = () => {
         { to: '/api-keys', label: 'API Key', icon: Key },
         { to: '/models', label: 'AI Models', icon: Bot },
         { to: '/about', label: 'About', icon: Info },
-        { to: '/contact', label: 'Contact', icon: Contact },
     ];
 
     const handleNavClick = (route) => {

@@ -9,16 +9,12 @@ export default function Home() {
     };
 
     return (
-        // use flex-grow to stretch inside <main>
         <div className="flex flex-col flex-1">
-            {/* Response boxes take up all available vertical space */}
             <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 p-2 md:p-4">
                 <ResponseBox prompt={prompt} index={0} />
                 <ResponseBox prompt={prompt} index={1} />
                 <ResponseBox prompt={prompt} index={2} />
             </div>
-
-            {/* Prompt area stays at bottom of Home */}
             <div className="border-t bg-background p-2 md:p-4 flex-shrink-0">
                 <PromptArea onSend={handlePrompt} />
             </div>
