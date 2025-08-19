@@ -1,4 +1,3 @@
-// utils/errorHandler.js
 import { toast } from 'sonner';
 
 export default function handleError(context = '', error = '') {
