@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
     Sun,
     Moon,
@@ -20,6 +21,9 @@ import {
 } from '@/components/ui/navigation-menu';
 
 const Header = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const [isDark, setIsDark] = useState(() => {
         if (typeof window !== 'undefined') {
             return (
@@ -32,7 +36,6 @@ const Header = () => {
     });
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [activeRoute, setActiveRoute] = useState('/');
 
     useEffect(() => {
         if (isDark) {
@@ -57,7 +60,7 @@ const Header = () => {
     ];
 
     const handleNavClick = (route) => {
-        setActiveRoute(route);
+        navigate(route);
         setIsMobileMenuOpen(false);
     };
 
@@ -109,7 +112,7 @@ const Header = () => {
                                 <NavigationMenuItem key={item.to}>
                                     <NavLink
                                         item={item}
-                                        isActive={activeRoute === item.to}
+                                        isActive={location.pathname === item.to}
                                         onClick={() => handleNavClick(item.to)}
                                     />
                                 </NavigationMenuItem>
@@ -164,7 +167,7 @@ const Header = () => {
                                         {navItems.map((item) => {
                                             const IconComponent = item.icon;
                                             const isActive =
-                                                activeRoute === item.to;
+                                                location.pathname === item.to;
                                             return (
                                                 <Button
                                                     key={item.to}
