@@ -17,7 +17,6 @@ window.onunhandledrejection = (event) => {
 createRoot(document.getElementById('root')).render(
     <>
         <App />
-        <Analytics />
         <Toaster richColors position="top-right" />
     </>,
 );
