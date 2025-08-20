@@ -83,7 +83,7 @@ export default function AboutPage() {
 
                         <div className="flex flex-wrap justify-center gap-3 mb-16">
                             {models.map((model, index) => (
-                                <div
+                                model !== 'None'&& <div
                                     key={model}
                                     className="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-full text-gray-300 text-sm hover:bg-gray-700/50 transition-all duration-300 hover:scale-105"
                                     style={{
